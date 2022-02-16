@@ -1,14 +1,10 @@
 name: 'Tests'
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 
 jobs:
   lint:
-    name: 'lint (node: ${{ matrix.node }}) '
+    name: 'lint (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     strategy:
       matrix:
