@@ -1,6 +1,10 @@
 name: 'Tests'
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   lint:
@@ -14,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node }}
-      - uses: ./.github/actions/install-modules
+      - name: Install dependencies
+        run: yarn
       - name: Run lint
         run: yarn run -s lint
