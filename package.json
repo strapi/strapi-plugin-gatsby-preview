@@ -1,6 +1,6 @@
 {
   "name": "@strapi/plugin-gatsby-preview",
-  "version": "4.0.7",
+  "version": "0.1.0",
   "description": "Enable CMS preview for Gatsby cloud",
   "repository": {
     "type": "git",
