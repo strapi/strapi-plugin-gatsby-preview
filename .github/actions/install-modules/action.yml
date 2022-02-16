@@ -7,6 +7,4 @@ runs:
   using: 'composite'
   steps:
     - run: $GITHUB_ACTION_PATH/script.sh
-      env:
-        GLOBAL_PACKAGES: ${{ inputs.globalPackages }}
       shell: bash

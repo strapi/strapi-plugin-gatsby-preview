@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   lint:
-    name: 'lint (node: ${{ matrix.node }})'
+    name: 'lint (node: ${{ matrix.node }}) '
     runs-on: ubuntu-latest
     strategy:
       matrix:
