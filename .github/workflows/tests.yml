@@ -1,0 +1,19 @@
+name: 'Tests'
+
+on: [push]
+
+jobs:
+  lint:
+    name: 'lint (node: ${{ matrix.node }})'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [12, 14, 16]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: ./.github/actions/install-modules
+      - name: Run lint
+        run: yarn run -s lint
