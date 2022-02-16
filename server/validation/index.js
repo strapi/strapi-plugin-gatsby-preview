@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line
 const { yup, validateYupSchema } = require('@strapi/utils');
 
 const createPreviewContentTypesSchema = contentTypes => {
@@ -12,7 +13,7 @@ const createPreviewContentTypesSchema = contentTypes => {
   return yup
     .object()
     .shape(fields)
-    .test('missing-keys', 'Some content types are missing', function(value) {
+    .test('missing-keys', 'Some content types are missing', function (value) {
       if (!value) {
         return true;
       }
@@ -26,10 +27,7 @@ const createPreviewContentTypesSchema = contentTypes => {
 const contentSyncSchema = yup
   .object()
   .shape({
-    contentSyncURL: yup
-      .string()
-      .url()
-      .required(),
+    contentSyncURL: yup.string().url().required(),
   })
   .required();
 

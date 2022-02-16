@@ -29,6 +29,17 @@
     "node": ">=12.x. <=16.x.x",
     "npm": ">=6.0.0"
   },
+  "scripts": {
+    "format": "npm-run-all -p format:*",
+    "format:code": "npm run prettier:code -- --write",
+    "format:other": "npm run prettier:other -- --write",
+    "lint": "npm-run-all -p lint:code",
+    "lint:code": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "lint:other": "npm run prettier:other -- --check",
+    "prettier:code": "prettier \"**/*.js\"",
+    "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\""
+  },
   "strapi": {
     "name": "gatsby-preview",
     "displayName": "Gatsby preview",
@@ -36,6 +47,9 @@
     "kind": "plugin"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.4",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -48,10 +62,20 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
-    "prettier": "^2.5.1",
-    "stylelint": "^14.5.0",
-    "stylelint-config-recommended": "^7.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css,scss,yaml,yml}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
   }
 }
