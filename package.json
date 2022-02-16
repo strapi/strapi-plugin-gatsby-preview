@@ -1,0 +1,38 @@
+{
+  "name": "@strapi/plugin-gatsby-preview",
+  "version": "4.0.7",
+  "description": "Enable CMS preview for Gatsby cloud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strapi/strapi.git",
+    "directory": "packages/plugins/documentation"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Strapi Solutions SAS",
+    "email": "hi@strapi.io",
+    "url": "https://strapi.io"
+  },
+  "maintainers": [
+    {
+      "name": "Strapi Solutions SAS",
+      "email": "hi@strapi.io",
+      "url": "https://strapi.io"
+    }
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.0",
+    "@strapi/utils": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=12.x. <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "name": "gatsby-preview",
+    "displayName": "Gatsby preview",
+    "description": "Preview content changes from your team in Gatsby Cloud before they get deployed to production",
+    "kind": "plugin"
+  }
+}
