@@ -19,20 +19,6 @@ module.exports = {
     strapi: true,
   },
   rules: {
-    // 'jsdoc/require-jsdoc': [
-    //   'warn',
-    //   {
-    //     publicOnly: true,
-    //     require: {
-    //       ArrowFunctionExpression: true,
-    //       ClassDeclaration: true,
-    //       ClassExpression: true,
-    //       FunctionDeclaration: true,
-    //       FunctionExpression: true,
-    //       MethodDefinition: true,
-    //     },
-    //   },
-    // ],
     'node/no-unpublished-require': 'off',
     'require-atomic-updates': 'off',
     'no-process-exit': 'off',
